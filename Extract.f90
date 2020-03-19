@@ -4,6 +4,25 @@
 ! It can also calculate overalls (by length) in a region [a,b]
 ! Along the fragment
 ! It can also extract BPP, but the same values are printed (ready to plot)
+!
+!    -----------------------------------------------------------------------
+!    Copyright (C) 2019 Victor Velasco
+!
+!    SerraNA is free software: you can redistribute it and/or modify
+!    it under the terms of the GNU General Public License as published by
+!    the Free Software Foundation, either version 3 of the License, or
+!    (at your option) any later version.
+!
+!    SerraNA is distributed in the hope that it will be useful,
+!    but WITHOUT ANY WARRANTY; without even the implied warranty of
+!    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+!    GNU General Public License for more details.
+!
+!    You should have received a copy of the GNU General Public License
+!    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+!    -----------------------------------------------------------------------
+!
+
 
   program Extract
 
@@ -89,8 +108,8 @@
 
     !Warnings!
     if (type_parm /= 4 .and. type_parm /=1 ) then !For not BPP.out
-      if (sublength < 1) stop "Error, sublength must be greater than 0"
-      if (sublength > nbp-1) stop "Error, sublength must not be greater than number of bps"
+      if (sublength < 2) stop "Error, sublength must be greater than 1"
+      if (sublength > nbp) stop "Error, sublength must not be greater than number of bps"
 
       write(6,*) "Extracting sublength", sublength
     end if

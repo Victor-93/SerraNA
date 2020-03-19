@@ -136,7 +136,7 @@ ex_NA.in is the input file that indicates:
    2.- Type "0" for extracting a sub-length or "1" for getting avg+-sd as 
        a function of length.
    3.- (i) If you type 0, then indicate the length (l) you want to process,
-           which should be 0 < l < N, where N is the number of bps.
+           which should be 1 < l < N, where N is the number of bps.
        (ii) If you typed 1, then indicate the region (a,b) from which you want
             to extract avg+-sd as a function of length.
             If it is linear DNA, then 0 < a < b < N
@@ -174,7 +174,49 @@ ___________________________________________________________________
 We provide an example/test with topology and trajectory files corresponding
 to the 32-mer from Velasco et al.
 
+The first step is to compile the programs by typing "make" and then
+run the main code (SerraNA.f90) by typing:
+
+./SerraNA < s_NA.in
+
+This will produce the following files: BPP.out BSP.out 
+structural_parameters.out and elastic_parameters.out
+
+The input files *.in have the options set for processing the 32-mer trajectory.
+
+You can edit ov_NA.in and run the Analysis for experimenting different results.
+
+Once the structural and elastic parameters are calculated, one can use the
+Extract process to extract the data that one is interested in or to filter
+a particular length (l) or a region [a,b].
+
+The bashscript run-example.sh runs and edits ex_NA.in multiple times to extract
+structural_parameters.out at the lengths of 2, 12 and 22 bps, and the avg-std
+of elastic_parameters.out at regions [1,6], [7,12], [13,18] and [19,24], and
+finally, the overalls for the elastic parameters. Then it executes a python script
+plot-example.py to plot 1) bending angles for 2mer, 12mer and 22mer.
+                        2) Twist elastic constant for the 4 regions as a 
+                           function of length.
+                        3) Stretch modulus as a function of length for the 
+                           whole fragment.
+
+This produces a pdf image (my_first_result.pdf) with the 3 subplots.
 ___________________________________________________________________
 
+                        LICENSE
+                       ---------
 
+    SerraNA is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published 
+    by the Free Software Foundation, either version 3 of the License, or
+    any later version.
 
+    SerraNA is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+___________________________________________________________________

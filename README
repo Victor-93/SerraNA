@@ -24,9 +24,9 @@ constants that describe the fragment's overall flexibility.
 These elastic constants correspond to torsional, stretch modulus,
 and the persistence length.
 
-For more information look the manual and the paper:
+For more information look the included manual and the paper:
 
-Velasco, Burman, Golestanian and Noy (2019)
+Velasco-Berrelleza, V., Burman, M., Shepherd, J. W., Leake, M. C., Golestanian, R., & Noy, A. (2020). SerraNA: a program to determine nucleic acids elasticity from simulation data. Physical Chemistry Chemical Physics, 22(34), 19254-19266.
 
 (this is the paper to cite! :))
 
